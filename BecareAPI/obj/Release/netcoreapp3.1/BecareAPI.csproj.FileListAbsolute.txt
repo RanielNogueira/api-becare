@@ -1,0 +1,14 @@
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.exe
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.deps.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.runtimeconfig.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.runtimeconfig.dev.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.pdb
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\BecareAPI.xml
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareAPI\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
