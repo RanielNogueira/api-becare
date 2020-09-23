@@ -8,7 +8,7 @@ namespace BecareAPI.Models
 {
     public class Hospital
     {
-        public Hospital(int id, string nome, string logradouro,string cep, string telefone, bool sus, bool publico,  double latitude, double longitude)
+        public Hospital(int id, string nome, string logradouro, string cep, string telefone, bool sus, bool publico, double latitude, double longitude, string fila)
         {
             Id = id;
             Nome = nome;
@@ -19,7 +19,7 @@ namespace BecareAPI.Models
             Publico = publico;
             Longitude = longitude;
             Latitude = latitude;
-
+            Fila = fila;
         }
 
         [Key]
@@ -37,5 +37,7 @@ namespace BecareAPI.Models
         public double Longitude { get; set; }
         [Required]
         public double Latitude { get; set; }
+        [Required]
+        public string Fila { get; set; }
     }
 }
