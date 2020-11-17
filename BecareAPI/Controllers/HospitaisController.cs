@@ -1,5 +1,5 @@
-﻿using BecareAPI.Models;
-using BecareAPI.Repository.Interfaces;
+﻿using BecareAPI.Repository.Interfaces;
+using BecareDomain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;

@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BecareAPI", "BecareAPI\BecareAPI.csproj", "{31D94D43-9EC9-4EAA-A7D3-0AFA5A68FCA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BecareAPI", "BecareAPI\BecareAPI.csproj", "{31D94D43-9EC9-4EAA-A7D3-0AFA5A68FCA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BecareUI", "BecareUI\BecareUI.csproj", "{7C437914-BE79-49B1-AEEC-A9A2AB4D9690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BecareDomain", "BecareDomain\BecareDomain.csproj", "{DF9A6628-E6DD-491E-90CD-AC4132E543FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BecareService", "BecareService\BecareService.csproj", "{9EAE41B4-B0CD-4B9E-96F3-4BA110454001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{31D94D43-9EC9-4EAA-A7D3-0AFA5A68FCA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D94D43-9EC9-4EAA-A7D3-0AFA5A68FCA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D94D43-9EC9-4EAA-A7D3-0AFA5A68FCA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C437914-BE79-49B1-AEEC-A9A2AB4D9690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C437914-BE79-49B1-AEEC-A9A2AB4D9690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C437914-BE79-49B1-AEEC-A9A2AB4D9690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C437914-BE79-49B1-AEEC-A9A2AB4D9690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9A6628-E6DD-491E-90CD-AC4132E543FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9A6628-E6DD-491E-90CD-AC4132E543FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9A6628-E6DD-491E-90CD-AC4132E543FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9A6628-E6DD-491E-90CD-AC4132E543FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EAE41B4-B0CD-4B9E-96F3-4BA110454001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAE41B4-B0CD-4B9E-96F3-4BA110454001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAE41B4-B0CD-4B9E-96F3-4BA110454001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EAE41B4-B0CD-4B9E-96F3-4BA110454001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

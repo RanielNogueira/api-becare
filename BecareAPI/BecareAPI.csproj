@@ -17,7 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BecareDomain\BecareDomain.csproj" />
+    <ProjectReference Include="..\BecareService\BecareService.csproj" />
   </ItemGroup>
 
 

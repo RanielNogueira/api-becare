@@ -1,8 +1,5 @@
-﻿using BecareAPI.Models;
+﻿using BecareDomain.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BecareAPI.Util
 {
@@ -19,7 +16,7 @@ namespace BecareAPI.Util
             return 6376500.0 * (2.0 * Math.Atan2(Math.Sqrt(d3), Math.Sqrt(1.0 - d3)));
         }
 
-        public static string GeraHorario()
+        public static double GeraHorario()
         {
             Random random = new Random();
             TimeSpan start = TimeSpan.FromHours(0);
@@ -28,9 +25,7 @@ namespace BecareAPI.Util
             int minutes = random.Next(maxMinutes);
             TimeSpan t = start.Add(TimeSpan.FromMinutes(minutes));
 
-            return t.Hours > 0 ? t.ToString("hh") + ":" + t.ToString("mm")+"h" : t.ToString("mm")+"min";
-
-
+            return t.TotalMinutes ;
         }
     }
 }
