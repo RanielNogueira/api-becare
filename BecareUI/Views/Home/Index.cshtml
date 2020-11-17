@@ -1,8 +1,49 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC7Kig2FnwJRvoLVkdCeCcZ6i3uWx6tKU&callback=initMap&libraries=localContext&v=beta"
+            type="text/javascript"></script>
+
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=localContext&v=beta"
+            defer></script>*@
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script type="text/javascript">
+        let map;
+
+        function initMap() {
+            const localContextMapView = new google.maps.localContext.LocalContextMapView({
+                element: document.getElementById("map"),
+                placeTypePreferences: ["hospital"],
+                maxPlaceCount: 12,
+            });
+            map = localContextMapView.map;
+            map.setOptions({
+                center: { lat: -23.5489, lng: -46.6388 },
+                zoom: 14,
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Raniel\\source\\repos\\BecareAPI\\BecareDomain\\BecareDomain.csproj": {}
+    "C:\\Users\\raniel.gomes\\Documents\\FrontEnd\\api-becare\\BecareDomain\\BecareDomain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Raniel\\source\\repos\\BecareAPI\\BecareDomain\\BecareDomain.csproj": {
+    "C:\\Users\\raniel.gomes\\Documents\\FrontEnd\\api-becare\\BecareDomain\\BecareDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Raniel\\source\\repos\\BecareAPI\\BecareDomain\\BecareDomain.csproj",
+        "projectUniqueName": "C:\\Users\\raniel.gomes\\Documents\\FrontEnd\\api-becare\\BecareDomain\\BecareDomain.csproj",
         "projectName": "BecareDomain",
-        "projectPath": "C:\\Users\\Raniel\\source\\repos\\BecareAPI\\BecareDomain\\BecareDomain.csproj",
-        "packagesPath": "C:\\Users\\Raniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Raniel\\source\\repos\\BecareAPI\\BecareDomain\\obj\\",
+        "projectPath": "C:\\Users\\raniel.gomes\\Documents\\FrontEnd\\api-becare\\BecareDomain\\BecareDomain.csproj",
+        "packagesPath": "C:\\Users\\raniel.gomes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\raniel.gomes\\Documents\\FrontEnd\\api-becare\\BecareDomain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Raniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\raniel.gomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

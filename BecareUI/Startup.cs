@@ -24,6 +24,8 @@ namespace BecareUI
 
             services.AddScoped<BecareDomain.Service.IHospital,BecareService.Repository.HospitalRepository>();
 
+            services.AddMvc().AddRazorRuntimeCompilation();
+
             services.AddControllersWithViews();
         }
 
