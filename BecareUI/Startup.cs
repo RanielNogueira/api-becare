@@ -1,10 +1,12 @@
 using BecareService.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Data;
 
 namespace BecareUI
 {
@@ -21,6 +23,8 @@ namespace BecareUI
         {
             services.AddDbContext<BecareContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("DbBecare")));
+
+            services.AddTransient<IDbConnection>(db => new SqlConnection(Configuration.GetConnectionString("DbBecare")));
 
             services.AddScoped<BecareDomain.Service.IHospital,BecareService.Repository.HospitalRepository>();
 

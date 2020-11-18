@@ -25,7 +25,9 @@ namespace BecareAPI.Util
             int minutes = random.Next(maxMinutes);
             TimeSpan t = start.Add(TimeSpan.FromMinutes(minutes));
 
-            return t.TotalMinutes ;
+            var result = t.TotalMinutes <= 0 ? 22 : t.TotalMinutes;
+
+            return result ;
         }
     }
 }

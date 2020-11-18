@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BecareUI.Models;
+using BecareDomain.Service;
 
 namespace BecareUI.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHospital HospitalRepo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHospital hospitalRepo)
         {
             _logger = logger;
+            HospitalRepo = hospitalRepo;
         }
 
         public IActionResult Index()
@@ -23,9 +26,19 @@ namespace BecareUI.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public async Task<IActionResult> Hospitais()
         {
-            return View();
+            try
+            {
+                var result = await HospitalRepo.GetSaoPaulo();
+                return Ok(result.Take(150));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

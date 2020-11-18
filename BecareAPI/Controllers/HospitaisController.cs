@@ -1,9 +1,11 @@
-﻿using BecareAPI.Repository.Interfaces;
-using BecareDomain.Models;
+﻿using BecareDomain.Models;
+using BecareDomain.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
 using static BecareAPI.Util.Features;
 
 namespace BecareAPI.Controllers
@@ -22,11 +24,29 @@ namespace BecareAPI.Controllers
         [HttpGet]
         [Route("listar")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult listar()
+        public async Task<IActionResult> listar()
         {
             try
             {
-                return Ok(hospitalRepo.ListaHospitais());
+
+                var result = await hospitalRepo.GetAll();
+
+                var x = false;
+
+                TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+
+                foreach (var item in result)
+                {
+                    item.Nome = myTI.ToTitleCase(item.Nome.ToLower());
+                    item.Logradouro = myTI.ToTitleCase(item.Logradouro.ToLower())+" - "+item.Numero;
+                    item.Ps = x;
+                    item.Sus = x;
+                    item.Fila = GeraHorario().ToString();
+
+                    x = !x;
+                }
+
+                return Ok(result.Take(20));
             }
             catch (Exception)
             {
@@ -39,11 +59,11 @@ namespace BecareAPI.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [Route("listar/{nome}")]
-        public IActionResult listar(string nome)
+        public async Task<IActionResult> listar(string nome)
         {
             try
             {
-                return Ok(hospitalRepo.FiltrarHospital(nome));
+                return Ok(await hospitalRepo.FiltrarHospital(nome));
             }
             catch (Exception e)
             {
@@ -51,58 +71,58 @@ namespace BecareAPI.Controllers
             }
         }
 
-        [HttpGet]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
-        [Route("listar-ios/{nome}")]
-        public IActionResult listarios(string nome)
-        {
-            try
-            {
-                return Ok(new { hospitais = hospitalRepo.FiltrarHospital(nome) });
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+      [HttpGet]
+      [ProducesResponseType(200)]
+      [ProducesResponseType(400)]
+      [Route("listar-ios/{nome}")]
+      public IActionResult listarios(string nome)
+      {
+          try
+          {
+              return Ok(new { hospitais = hospitalRepo.FiltrarHospital(nome) });
+          }
+          catch (Exception e)
+          {
+              return BadRequest(e.Message);
+          }
+      }
 
-        [HttpGet]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
-        [Route("listar/{lat:double}/{lon:double}/{raio:int}")]
-        public IActionResult listar(double lat, double lon, int raio)
-        {
-            try
-            {
-                var LocalCliente = new Local(lat, lon);
+        //[HttpGet]
+        //[ProducesResponseType(200)]
+        //[ProducesResponseType(400)]
+        //[Route("listar/{lat:double}/{lon:double}/{raio:int}")]
+        //public IActionResult listar(double lat, double lon, int raio)
+        //{
+        //    try
+        //    {
+        //        var LocalCliente = new Local(lat, lon);
 
-                var ListaRetorno = new List<dynamic>();
+        //        var ListaRetorno = new List<dynamic>();
 
-                foreach (var hospital in hospitalRepo.ListaHospitais())
-                {
-                    var LocalLista = new Local(hospital.Latitude, hospital.Longitude);
+        //        foreach (var hospital in hospitalRepo.ListaHospitais())
+        //        {
+        //            var LocalLista = new Local(Convert.ToDouble(hospital.Latitude), Convert.ToDouble(hospital.Longitude));
 
-                    double Distancia = CalcularDistancia(LocalCliente, LocalLista);
+        //            double Distancia = CalcularDistancia(LocalCliente, LocalLista);
 
 
-                    if (Distancia <= raio)
-                    {
+        //            if (Distancia <= raio)
+        //            {
 
-                        Distancia = Math.Round(Distancia / 1000,1);
+        //                Distancia = Math.Round(Distancia / 1000,1);
 
-                        ListaRetorno.Add(new { hospital, Distancia });
-                    }
-               }
+        //                ListaRetorno.Add(new { hospital, Distancia });
+        //            }
+        //       }
 
-                return Ok(ListaRetorno);
-            }
-            catch (Exception e)
-            {
+        //        return Ok(ListaRetorno);
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                return BadRequest(e.Message);
-            }
-        }
+        //        return BadRequest(e.Message);
+        //    }
+        //}
 
     }
 }

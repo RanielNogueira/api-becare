@@ -1,0 +1,12 @@
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\bin\Release\netcoreapp3.1\BecareService.deps.json
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\bin\Release\netcoreapp3.1\BecareService.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\bin\Release\netcoreapp3.1\BecareService.pdb
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\bin\Release\netcoreapp3.1\BecareDomain.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\bin\Release\netcoreapp3.1\BecareDomain.pdb
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.csprojAssemblyReference.cache
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.AssemblyInfoInputs.cache
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.AssemblyInfo.cs
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.csproj.CoreCompileInputs.cache
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.csproj.CopyComplete
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.dll
+C:\Users\Raniel\source\repos\BecareAPI\BecareService\obj\Release\netcoreapp3.1\BecareService.pdb

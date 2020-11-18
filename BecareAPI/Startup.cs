@@ -1,12 +1,16 @@
-using BecareAPI.Repository.Implementation;
-using BecareAPI.Repository.Interfaces;
+using BecareDomain.Service;
+using BecareService.Data;
+using BecareService.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Data;
 using System.IO;
 using System.Reflection;
 
@@ -23,10 +27,21 @@ namespace BecareAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BecareContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DbBecare")));
+
+            services.AddTransient<IDbConnection>(db => new SqlConnection(Configuration.GetConnectionString("DbBecare")));
+
             services.AddScoped<IHospital, HospitalRepository>();
 
             services.AddControllers();
             services.AddCors();
+
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BeCare API", Version = "v1", });
