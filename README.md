@@ -1,4 +1,4 @@
-# Solução BeCare - API e Fron-end
+# Solução BeCare - API e Front-end
 
 Para acessar a documentação da API, utilize o link : https://becare-api.azurewebsites.net/swagger/index.html
 
